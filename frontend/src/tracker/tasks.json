@@ -1,0 +1,417 @@
+{
+  "project": {
+    "title": "Enigma-Research-Registry-Index",
+    "scenario": "Research-data timestamping & integrity proof \u2014 prove a dataset existed unaltered at time T.",
+    "repo": "https://github.com/enigma-group-project/Enigma-Research-Registry-Index",
+    "gui": "https://enigma-group-project.github.io/Enigma-Research-Registry-Index/",
+    "tracker": "https://enigma-group-project.github.io/Enigma-Research-Registry-Index/tracker/"
+  },
+  "org": "enigma-group-project",
+  "timeline": {
+    "start": "2026-06-10",
+    "end": "2026-07-01"
+  },
+  "phases": [
+    "plan",
+    "design",
+    "code",
+    "compile",
+    "revise",
+    "deploy",
+    "test",
+    "document",
+    "present"
+  ],
+  "members": [
+    {
+      "id": 1,
+      "name": "Member 1",
+      "handle": "@member1",
+      "slice": "Publisher Registration",
+      "contract": "IssuerRegistry.sol",
+      "testContract": "IssuerRegistryTest",
+      "module": "issuer",
+      "functions": "registerPublisher, deregisterPublisher, transferCurator",
+      "branch": "feature/member1-issuer",
+      "deliverables": {
+        "video": "",
+        "slides": "",
+        "doc": "docs/issuer-module.md"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Member 2",
+      "handle": "@member2",
+      "slice": "Dataset Registration",
+      "contract": "RecordRegistry.sol",
+      "testContract": "RecordRegistryTest",
+      "module": "record",
+      "functions": "registerDataset",
+      "branch": "feature/member2-record",
+      "deliverables": {
+        "video": "",
+        "slides": "",
+        "doc": "docs/record-module.md"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Member 3",
+      "handle": "@member3",
+      "slice": "Verification",
+      "contract": "Verification.sol",
+      "testContract": "VerificationTest",
+      "module": "verification",
+      "functions": "verifyDataset, verifyDatasetHash",
+      "branch": "feature/member3-verification",
+      "deliverables": {
+        "video": "",
+        "slides": "",
+        "doc": "docs/verification-module.md"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Member 4",
+      "handle": "@member4",
+      "slice": "Transfer / Revoke / Audit",
+      "contract": "AuditTrail.sol",
+      "testContract": "AuditTrailTest",
+      "module": "audit",
+      "functions": "transferDataset, revokeDataset, supersedeVersion, logProvenance",
+      "branch": "feature/member4-audit",
+      "deliverables": {
+        "video": "",
+        "slides": "",
+        "doc": "docs/audit-module.md"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "m1-plan",
+      "member": 1,
+      "phase": "plan",
+      "due": "2026-06-11",
+      "done": false,
+      "title": "Plan Publisher Registration",
+      "desc": "Define roles, acceptance criteria and a sequence diagram for the Publisher Registration slice."
+    },
+    {
+      "id": "m1-design",
+      "member": 1,
+      "phase": "design",
+      "due": "2026-06-13",
+      "done": false,
+      "title": "Design Publisher Registration",
+      "desc": "Specify contracts/IssuerRegistry.sol \u2014 functions (registerPublisher, deregisterPublisher, transferCurator), events, errors, storage layout."
+    },
+    {
+      "id": "m1-code",
+      "member": 1,
+      "phase": "code",
+      "due": "2026-06-18",
+      "done": false,
+      "title": "Code Publisher Registration",
+      "desc": "Implement registerPublisher, deregisterPublisher, transferCurator in contracts/IssuerRegistry.sol (clear the TODO(member1) markers)."
+    },
+    {
+      "id": "m1-compile",
+      "member": 1,
+      "phase": "compile",
+      "due": "2026-06-19",
+      "done": false,
+      "title": "Compile",
+      "desc": "`forge build` is green including the Publisher Registration slice."
+    },
+    {
+      "id": "m1-revise",
+      "member": 1,
+      "phase": "revise",
+      "due": "2026-06-22",
+      "done": false,
+      "title": "Revise after review",
+      "desc": "Address PR review feedback; refactor contracts/IssuerRegistry.sol and tests."
+    },
+    {
+      "id": "m1-deploy",
+      "member": 1,
+      "phase": "deploy",
+      "due": "2026-06-24",
+      "done": false,
+      "title": "Deploy Publisher Registration",
+      "desc": "Deploy via script/Deploy.s.sol to Anvil (then Sepolia); record addresses in config.js."
+    },
+    {
+      "id": "m1-test",
+      "member": 1,
+      "phase": "test",
+      "due": "2026-06-26",
+      "done": false,
+      "title": "Test Publisher Registration",
+      "desc": "`forge test --match-contract IssuerRegistryTest` passes; add edge-case + event tests."
+    },
+    {
+      "id": "m1-document",
+      "member": 1,
+      "phase": "document",
+      "due": "2026-06-28",
+      "done": false,
+      "title": "Document Publisher Registration",
+      "desc": "Write docs/issuer-module.md and fill your README contribution row."
+    },
+    {
+      "id": "m1-present",
+      "member": 1,
+      "phase": "present",
+      "due": "2026-07-01",
+      "done": false,
+      "title": "Present Publisher Registration",
+      "desc": "Record a demo video + slide deck and link them under Deliverables."
+    },
+    {
+      "id": "m2-plan",
+      "member": 2,
+      "phase": "plan",
+      "due": "2026-06-11",
+      "done": false,
+      "title": "Plan Dataset Registration",
+      "desc": "Define roles, acceptance criteria and a sequence diagram for the Dataset Registration slice."
+    },
+    {
+      "id": "m2-design",
+      "member": 2,
+      "phase": "design",
+      "due": "2026-06-13",
+      "done": false,
+      "title": "Design Dataset Registration",
+      "desc": "Specify contracts/RecordRegistry.sol \u2014 functions (registerDataset), events, errors, storage layout."
+    },
+    {
+      "id": "m2-code",
+      "member": 2,
+      "phase": "code",
+      "due": "2026-06-18",
+      "done": false,
+      "title": "Code Dataset Registration",
+      "desc": "Implement registerDataset in contracts/RecordRegistry.sol (clear the TODO(member2) markers)."
+    },
+    {
+      "id": "m2-compile",
+      "member": 2,
+      "phase": "compile",
+      "due": "2026-06-19",
+      "done": false,
+      "title": "Compile",
+      "desc": "`forge build` is green including the Dataset Registration slice."
+    },
+    {
+      "id": "m2-revise",
+      "member": 2,
+      "phase": "revise",
+      "due": "2026-06-22",
+      "done": false,
+      "title": "Revise after review",
+      "desc": "Address PR review feedback; refactor contracts/RecordRegistry.sol and tests."
+    },
+    {
+      "id": "m2-deploy",
+      "member": 2,
+      "phase": "deploy",
+      "due": "2026-06-24",
+      "done": false,
+      "title": "Deploy Dataset Registration",
+      "desc": "Deploy via script/Deploy.s.sol to Anvil (then Sepolia); record addresses in config.js."
+    },
+    {
+      "id": "m2-test",
+      "member": 2,
+      "phase": "test",
+      "due": "2026-06-26",
+      "done": false,
+      "title": "Test Dataset Registration",
+      "desc": "`forge test --match-contract RecordRegistryTest` passes; add edge-case + event tests."
+    },
+    {
+      "id": "m2-document",
+      "member": 2,
+      "phase": "document",
+      "due": "2026-06-28",
+      "done": false,
+      "title": "Document Dataset Registration",
+      "desc": "Write docs/record-module.md and fill your README contribution row."
+    },
+    {
+      "id": "m2-present",
+      "member": 2,
+      "phase": "present",
+      "due": "2026-07-01",
+      "done": false,
+      "title": "Present Dataset Registration",
+      "desc": "Record a demo video + slide deck and link them under Deliverables."
+    },
+    {
+      "id": "m3-plan",
+      "member": 3,
+      "phase": "plan",
+      "due": "2026-06-11",
+      "done": false,
+      "title": "Plan Verification",
+      "desc": "Define roles, acceptance criteria and a sequence diagram for the Verification slice."
+    },
+    {
+      "id": "m3-design",
+      "member": 3,
+      "phase": "design",
+      "due": "2026-06-13",
+      "done": false,
+      "title": "Design Verification",
+      "desc": "Specify contracts/Verification.sol \u2014 functions (verifyDataset, verifyDatasetHash), events, errors, storage layout."
+    },
+    {
+      "id": "m3-code",
+      "member": 3,
+      "phase": "code",
+      "due": "2026-06-18",
+      "done": false,
+      "title": "Code Verification",
+      "desc": "Implement verifyDataset, verifyDatasetHash in contracts/Verification.sol (clear the TODO(member3) markers)."
+    },
+    {
+      "id": "m3-compile",
+      "member": 3,
+      "phase": "compile",
+      "due": "2026-06-19",
+      "done": false,
+      "title": "Compile",
+      "desc": "`forge build` is green including the Verification slice."
+    },
+    {
+      "id": "m3-revise",
+      "member": 3,
+      "phase": "revise",
+      "due": "2026-06-22",
+      "done": false,
+      "title": "Revise after review",
+      "desc": "Address PR review feedback; refactor contracts/Verification.sol and tests."
+    },
+    {
+      "id": "m3-deploy",
+      "member": 3,
+      "phase": "deploy",
+      "due": "2026-06-24",
+      "done": false,
+      "title": "Deploy Verification",
+      "desc": "Deploy via script/Deploy.s.sol to Anvil (then Sepolia); record addresses in config.js."
+    },
+    {
+      "id": "m3-test",
+      "member": 3,
+      "phase": "test",
+      "due": "2026-06-26",
+      "done": false,
+      "title": "Test Verification",
+      "desc": "`forge test --match-contract VerificationTest` passes; add edge-case + event tests."
+    },
+    {
+      "id": "m3-document",
+      "member": 3,
+      "phase": "document",
+      "due": "2026-06-28",
+      "done": false,
+      "title": "Document Verification",
+      "desc": "Write docs/verification-module.md and fill your README contribution row."
+    },
+    {
+      "id": "m3-present",
+      "member": 3,
+      "phase": "present",
+      "due": "2026-07-01",
+      "done": false,
+      "title": "Present Verification",
+      "desc": "Record a demo video + slide deck and link them under Deliverables."
+    },
+    {
+      "id": "m4-plan",
+      "member": 4,
+      "phase": "plan",
+      "due": "2026-06-11",
+      "done": false,
+      "title": "Plan Transfer / Revoke / Audit",
+      "desc": "Define roles, acceptance criteria and a sequence diagram for the Transfer / Revoke / Audit slice."
+    },
+    {
+      "id": "m4-design",
+      "member": 4,
+      "phase": "design",
+      "due": "2026-06-13",
+      "done": false,
+      "title": "Design Transfer / Revoke / Audit",
+      "desc": "Specify contracts/AuditTrail.sol \u2014 functions (transferDataset, revokeDataset, supersedeVersion, logProvenance), events, errors, storage layout."
+    },
+    {
+      "id": "m4-code",
+      "member": 4,
+      "phase": "code",
+      "due": "2026-06-18",
+      "done": false,
+      "title": "Code Transfer / Revoke / Audit",
+      "desc": "Implement transferDataset, revokeDataset, supersedeVersion, logProvenance in contracts/AuditTrail.sol (clear the TODO(member4) markers)."
+    },
+    {
+      "id": "m4-compile",
+      "member": 4,
+      "phase": "compile",
+      "due": "2026-06-19",
+      "done": false,
+      "title": "Compile",
+      "desc": "`forge build` is green including the Transfer / Revoke / Audit slice."
+    },
+    {
+      "id": "m4-revise",
+      "member": 4,
+      "phase": "revise",
+      "due": "2026-06-22",
+      "done": false,
+      "title": "Revise after review",
+      "desc": "Address PR review feedback; refactor contracts/AuditTrail.sol and tests."
+    },
+    {
+      "id": "m4-deploy",
+      "member": 4,
+      "phase": "deploy",
+      "due": "2026-06-24",
+      "done": false,
+      "title": "Deploy Transfer / Revoke / Audit",
+      "desc": "Deploy via script/Deploy.s.sol to Anvil (then Sepolia); record addresses in config.js."
+    },
+    {
+      "id": "m4-test",
+      "member": 4,
+      "phase": "test",
+      "due": "2026-06-26",
+      "done": false,
+      "title": "Test Transfer / Revoke / Audit",
+      "desc": "`forge test --match-contract AuditTrailTest` passes; add edge-case + event tests."
+    },
+    {
+      "id": "m4-document",
+      "member": 4,
+      "phase": "document",
+      "due": "2026-06-28",
+      "done": false,
+      "title": "Document Transfer / Revoke / Audit",
+      "desc": "Write docs/audit-module.md and fill your README contribution row."
+    },
+    {
+      "id": "m4-present",
+      "member": 4,
+      "phase": "present",
+      "due": "2026-07-01",
+      "done": false,
+      "title": "Present Transfer / Revoke / Audit",
+      "desc": "Record a demo video + slide deck and link them under Deliverables."
+    }
+  ]
+}
